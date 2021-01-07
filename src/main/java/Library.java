@@ -4,6 +4,7 @@ public class Library {
     private ArrayList<Book> bookCollection;
     private int stockCapacity;
 
+
     public Library(int stockCapacity) {
         this.stockCapacity = stockCapacity;
         this.bookCollection = new ArrayList<Book>();
@@ -26,14 +27,6 @@ public class Library {
         }
     }
 
-//    public Book lendBook() {
-//        Book lentBook = null;
-//        if (this.countBooks()>0) {
-//            lentBook = this.bookCollection.remove(0);
-//             borrowBook(lentBook);
-//        }
-//        return lentBook;
-//    }
     public void lendBook(Book book, Borrower borrower) {
         for (Book libraryBook:
              bookCollection) {
@@ -41,7 +34,7 @@ public class Library {
             if (libraryBook == book) {
                 lentBook = libraryBook;
             }
-//            bookCollection.remove(lentBook);
+            bookCollection.remove(book);
             borrower.borrowBook(lentBook);
         }
     }
