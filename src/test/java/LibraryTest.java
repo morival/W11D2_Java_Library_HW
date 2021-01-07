@@ -60,7 +60,7 @@ public class LibraryTest {
     public void canLendBookToBorrower() {
         library.addBook(book1);
         library.addBook(book2);
-        library.lendBook(book, borrower);
+        library.lendBook(book1, borrower);
         assertEquals(1, library.countBooks());
         assertEquals(1, borrower.borrowersCollectionCount());
     }
